@@ -565,7 +565,10 @@ type ContextProviderName =
   | "docs"
   | "gitlab-mr"
   | "os"
-  | "currentFile";
+  | "currentFile"  
+  | "pinMap"
+  | "dataSheet"
+  | "measurementMethodology";
 
 type TemplateType =
   | "llama2"

@@ -40,6 +40,10 @@ export const defaultContextProvidersVsCode: ContextProviderWithParams[] = [
   { name: "problems", params: {} },
   { name: "folder", params: {} },
   { name: "codebase", params: {} },
+  { name: "dataSheet", params: {} },
+  { name: "pinMap", params: {} },
+  { name: "measurementMethodology", params: {} },
+
 ];
 
 export const defaultContextProvidersJetBrains: ContextProviderWithParams[] = [
@@ -69,6 +73,8 @@ export const defaultSlashCommandsVscode: SlashCommandDescription[] = [
     name: "commit",
     description: "Generate a git commit message",
   },
+  { name: "generateTestProgram", description: "Generates Test Program" },
+  { name: "generateTestMethodology", description: "Generates Test Methodology" },
 ];
 
 export const defaultSlashCommandsJetBrains = [

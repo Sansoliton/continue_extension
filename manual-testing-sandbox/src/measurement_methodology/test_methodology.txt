@@ -1,0 +1,12 @@
+1. Set the input power supply to the desired input voltage level for the test, starting from 2V and increasing by 1V up to 20V.
+2. Connect the load resistor to the LDO's output to simulate the typical load conditions of 0.05mA.
+3. Turn on the power supply at initial Zero Voltage and allow it to stabilize for 2 seconds.
+4. Measure and record the output voltage of the LDO after stabilization at each input voltage level.
+5. Calculate the Line Regulation for each input voltage level using the formula:
+   Line Regulation (%) = [(Vout2 - Vout1) / Vout1] / [(Vin2 - Vin1) / Vin1] * 100
+   where:
+   - Vout1: previous output voltage
+   - Vout2: Output voltage after changing the input voltage
+   - Vin1: previous input voltage
+   - Vin2: Input voltage after changing the input voltage
+6. Repeat steps 1-5 for input voltage values ranging from 2V to 20V at 1V intervals.

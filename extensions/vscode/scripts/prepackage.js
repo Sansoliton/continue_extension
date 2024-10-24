@@ -106,35 +106,35 @@ const exe = os === "win32" ? ".exe" : "";
   );
 
   const indexHtmlPath = path.join(intellijExtensionWebviewPath, "index.html");
-  fs.copyFileSync(indexHtmlPath, "tmp_index.html");
-  rimrafSync(intellijExtensionWebviewPath);
-  fs.mkdirSync(intellijExtensionWebviewPath, { recursive: true });
+  // fs.copyFileSync(indexHtmlPath, "tmp_index.html");
+  // rimrafSync(intellijExtensionWebviewPath);
+  // fs.mkdirSync(intellijExtensionWebviewPath, { recursive: true });
 
-  await new Promise((resolve, reject) => {
-    ncp("dist", intellijExtensionWebviewPath, (error) => {
-      if (error) {
-        console.warn(
-          "[error] Error copying React app build to JetBrains extension: ",
-          error,
-        );
-        reject(error);
-      }
-      resolve();
-    });
-  });
+  // await new Promise((resolve, reject) => {
+  //   ncp("dist", intellijExtensionWebviewPath, (error) => {
+  //     if (error) {
+  //       console.warn(
+  //         "[error] Error copying React app build to JetBrains extension: ",
+  //         error,
+  //       );
+  //       reject(error);
+  //     }
+  //     resolve();
+  //   });
+  // });
 
-  // Put back index.html
-  if (fs.existsSync(indexHtmlPath)) {
-    rimrafSync(indexHtmlPath);
-  }
-  fs.copyFileSync("tmp_index.html", indexHtmlPath);
-  fs.unlinkSync("tmp_index.html");
+  // // Put back index.html
+  // if (fs.existsSync(indexHtmlPath)) {
+  //   rimrafSync(indexHtmlPath);
+  // }
+  // fs.copyFileSync("tmp_index.html", indexHtmlPath);
+  // fs.unlinkSync("tmp_index.html");
 
-  // Copy over other misc. files
-  fs.copyFileSync(
-    "../extensions/vscode/gui/onigasm.wasm",
-    path.join(intellijExtensionWebviewPath, "onigasm.wasm"),
-  );
+  // // Copy over other misc. files
+  // fs.copyFileSync(
+  //   "../extensions/vscode/gui/onigasm.wasm",
+  //   path.join(intellijExtensionWebviewPath, "onigasm.wasm"),
+  // );
 
   console.log("[info] Copied gui build to JetBrains extension");
 
@@ -178,7 +178,7 @@ const exe = os === "win32" ? ".exe" : "";
       },
       (error) => {
         if (error) {
-          console.warn("[info] Error copying onnxruntime-node files", error);
+          console.warn("[info] Error copying onnxruntime-node files", error);3
           reject(error);
         }
         resolve();
@@ -314,7 +314,7 @@ const exe = os === "win32" ? ".exe" : "";
     const currentDir = process.cwd();
 
     // Remove the dir we will be copying to
-    rimrafSync(`node_modules/${toCopy}`);
+    // rimrafSync(`node_modules/${toCopy}`);
 
     // Ensure the temporary directory exists
     fs.mkdirSync(tempDir, { recursive: true });
